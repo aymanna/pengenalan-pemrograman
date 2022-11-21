@@ -13,16 +13,16 @@ func main() {
 }
 
 func no1() {
-    var x string
+    var x byte
     var ascii_value int
     var is_numerical, is_lowercase, is_uppercase, valid bool
 
-    fmt.Scan(&x)
-    ascii_value = int(x[0])
+    fmt.Scanf("%c\n", &x)
+    ascii_value = int(x)
 
-    is_numerical = ascii_value >= 48 && ascii_value <= 57
-    is_lowercase = ascii_value >= 65 && ascii_value <= 90
-    is_uppercase = ascii_value >= 97 && ascii_value <= 122
+    is_numerical = ascii_value >= '0' && ascii_value <= '9'
+    is_lowercase = ascii_value >= 'a' && ascii_value <= 'z'
+    is_uppercase = ascii_value >= 'A' && ascii_value <= 'Z'
 
     valid = is_numerical || is_lowercase || is_uppercase
     fmt.Println(valid)
