@@ -1,24 +1,24 @@
 package main
 
-import (
-    "fmt"
-    "math"
-)
+import "fmt"
 
 func main() {
-    var x, y string
-    fmt.Scan(&x, &y)
+    var x, y rune
+    var are_alphabets, is_same bool
 
-    areAlphabets := isAlphabet(x) && isAlphabet(y)
-    isSame := math.Abs(float64(x[0]) - float64(y[0])) == 32
+    fmt.Scanf("%c %c\n", &x, &y)
 
-    fmt.Println(areAlphabets && isSame)
+    are_alphabets = is_alphabet(x) && is_alphabet(y)
+    is_same = x - y == 32 || y - x == 32
+
+    fmt.Println(are_alphabets && is_same)
 }
 
-func isAlphabet(char string) bool {
-    ascii_value := int(char[0])
-    isUpperCase := ascii_value > 64 && ascii_value < 91
-    isLowerCase := ascii_value > 96 && ascii_value < 123
+func is_alphabet(char rune) bool {
+    var is_uppercase, is_lowercase bool
 
-    return isUpperCase || isLowerCase
+    is_uppercase = char >= 'A' && char <= 'Z'
+    is_lowercase = char >= 'a' && char <= 'z'
+
+    return is_uppercase || is_lowercase
 }
