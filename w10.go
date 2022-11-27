@@ -200,7 +200,7 @@ func no10() {
     if n <= 15 {
         if n % 5 == 0 {
             fmt.Print(n / 5)
-            } else {
+        } else {
             fmt.Print(n / 5 + 1)
         }
     } else {
