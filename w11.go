@@ -159,8 +159,8 @@ func no7() {
 
 func no8() {
     var member string
-    var x int
-    var cashback, discount, first_three, last_three float64
+    var x, first_three, last_three int
+    var cashback, discount float64
     var all_odd, all_even bool
 
     fmt.Scan(&member)
@@ -181,21 +181,21 @@ func no8() {
         }
 
         if i >= 0 && i <= 2 {
-            first_three += float64(x)
+            first_three += x
         }
 
         if i >= 2 {
-            last_three += float64(x)
+            last_three += x
         }
     }
 
-    if !all_odd && !all_even {
-        cashback += 3.1 * first_three
-        discount += 1.7 * last_three
-    } else if all_even {
-        cashback += 3.1 * first_three
-    } else {
-        discount += 1.7 * last_three
+    if all_even {
+        cashback += 3.1 * float64(first_three)
+    } else if all_odd {
+        discount += 1.7 * float64(last_three)
+    } else {            
+        cashback += 3.1 * float64(first_three)
+        discount += 1.7 * float64(last_three)
     }
 
     if member == "Yes" {
@@ -223,14 +223,16 @@ func no9() {
 
 	rush_hour = ((hh >= 5) && ((hh == 9 && mm == 0) || (hh <= 8))) || 
 				((hh >= 16) && ((hh == 19 && mm == 0) || (hh <= 18)))
-	normal_hour = ((hh >= 9) && (hh <= 15)) || ((hh >= 19) &&
-				  ((hh == 22 && mm == 0) || (hh <= 21)))
+	normal_hour = ((hh >= 9) && (hh <= 15)) ||
+                  ((hh >= 19) && ((hh == 22 && mm == 0) || (hh <= 21)))
 
     if rush_hour {
         if km > 0 && km <= 10 {
             cost_per_km = 5000
-        } else {
+        } else if km <= 20 {
             cost_per_km = 4500
+        } else {
+            cost_per_km = 0
         }
     } else if normal_hour {
         cost_per_km = 4000
@@ -238,7 +240,7 @@ func no9() {
 		cost_per_km = 0
 	}
 
-    if km <= 0 || km > 20 || cost_per_km == 0 {
+    if cost_per_km == 0 {
         fmt.Println("Maaf, kami tidak bisa melayani pesanan anda.")
     } else {
         fmt.Println(cost_per_km * km)
