@@ -97,24 +97,23 @@ func no5() {
     var masa_kerja, anak_buah, total int
 
     fmt.Scan(&jabatan, &masa_kerja, &anak_buah)
-    total = 0
 
     if jabatan == "Staf" {
         if masa_kerja < 5 {
-            total += 4000
+            total = 4000
         } else if masa_kerja <= 10 {
-            total += 4000 + anak_buah * 100
+            total = 4000 + anak_buah * 100
         } else {
-            total += 5000 + anak_buah * 100
+            total = 5000 + anak_buah * 100
         }
     } else if jabatan == "Manajer" || jabatan == "Manager" {
         if masa_kerja <= 10 {
-            total += 8500 + anak_buah * 300
+            total = 8500 + anak_buah * 300
         } else {
-            total += 10000 + anak_buah * 300
+            total = 10000 + anak_buah * 300
         }
     } else if jabatan == "Direktur" {
-        total += 20000 + anak_buah * 500
+        total = 20000 + anak_buah * 500
     }
 
     fmt.Println(total)
