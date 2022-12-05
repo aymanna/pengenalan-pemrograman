@@ -3,7 +3,15 @@ package main
 import "fmt"
 
 func main() {
-    no9()
+    no1()
+    // no2()
+    // no3()
+    // no4()
+    // no5()
+    // no6()
+    // no7()
+    // no8()
+    // no9()
 }
 
 func no1() {
