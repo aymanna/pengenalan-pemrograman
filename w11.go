@@ -223,8 +223,8 @@ func no9() {
 
     rush_hour = ((hh >= 5) && ((hh == 9 && mm == 0) || (hh <= 8))) || 
                 ((hh >= 16) && ((hh == 19 && mm == 0) || (hh <= 18)))
-    normal_hour = ((hh >= 9) && (hh <= 15)) ||
-                  ((hh >= 19) && ((hh == 22 && mm == 0) || (hh <= 21)))
+    normal_hour = ((hh >= 9 && mm > 0) && (hh <= 15)) ||
+                  ((hh >= 19 && mm > 0) && ((hh == 22 && mm == 0) || (hh <= 21)))
 
     if rush_hour {
         if km > 0 && km <= 10 {
