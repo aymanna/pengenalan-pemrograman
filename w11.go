@@ -133,7 +133,7 @@ func no6() {
         } else {
             fmt.Println("Mesin mati")
         }
-    } else if !kopling && gas {
+    } else {
         if gigi == 0 {
             fmt.Println("Mesin menyala dan motor tidak berjalan")
         } else {
