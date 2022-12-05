@@ -217,13 +217,13 @@ func no8() {
 func no9() {
     var hh, mm int
     var km, cost_per_km float64
-	var rush_hour, normal_hour bool
+    var rush_hour, normal_hour bool
 
     fmt.Scan(&hh, &mm, &km)
 
-	rush_hour = ((hh >= 5) && ((hh == 9 && mm == 0) || (hh <= 8))) || 
-				((hh >= 16) && ((hh == 19 && mm == 0) || (hh <= 18)))
-	normal_hour = ((hh >= 9) && (hh <= 15)) ||
+    rush_hour = ((hh >= 5) && ((hh == 9 && mm == 0) || (hh <= 8))) || 
+                ((hh >= 16) && ((hh == 19 && mm == 0) || (hh <= 18)))
+    normal_hour = ((hh >= 9) && (hh <= 15)) ||
                   ((hh >= 19) && ((hh == 22 && mm == 0) || (hh <= 21)))
 
     if rush_hour {
@@ -236,9 +236,9 @@ func no9() {
         }
     } else if normal_hour {
         cost_per_km = 4000
-	} else {
-		cost_per_km = 0
-	}
+    } else {
+        cost_per_km = 0
+    }
 
     if cost_per_km == 0 {
         fmt.Println("Maaf, kami tidak bisa melayani pesanan anda.")
