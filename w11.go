@@ -167,7 +167,7 @@ func no8() {
     for i := 0; i < 5; i++ {
         fmt.Scan(&x)
 
-        if x%2 == 0 {
+        if x % 2 == 0 {
             all_odd = false
         } else {
             all_even = false
@@ -219,7 +219,7 @@ func no9() {
 	normal_hour = ((hh >= 9) && (hh <= 15)) || ((hh >= 19) &&
 				  ((hh == 22 && mm == 0) || (hh <= 21)))
 
-    if  rush_hour {
+    if rush_hour {
         if km > 0 && km <= 10 {
             cost_per_km = 5000
         } else {
